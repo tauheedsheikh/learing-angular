@@ -1,0 +1,36 @@
+<!-- 
+<div class="container">
+
+    
+    <h1>Product Works!</h1>
+    <p class="alert alert-primary">
+        {{ user | json}}
+    </p>
+
+    <p class="alert alert-primary">
+        {{ dataSarvice.user | json}}
+    </p>
+    
+    <p class="alert alert-primary">
+        Use is loggedIn - {{ isLoggedIn }}
+    </p>
+</div> -->
+
+<div class="container">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let p of products">
+            <div class="card">
+                <img src="{{p.images}}" class="card-img-top" alt="p.images">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.title}}</h5>
+                    <p class="card-text">{{p.description}}</p>
+                    <p class="card-text">Price : {{p.price}} </p>
+                    <p class="card-text">Category : {{p.category}} </p>
+                    <!-- <p class="card-text">Category : {{p.category}} </p> -->
+                    <!-- <p class="card-text">Category : {{p.category}} </p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.form-container {
+    border: 2px solid green;
+    margin-top: 1rem;
+    padding: 40px;
+    width: 50%;
+  
+}
+
+.error {
+    color: red;
+    font-style: italic;
+    font-size: 11px;
+}

@@ -1,0 +1,7 @@
+.card{
+    background-color: rgb(138, 204, 224);
+    cursor: pointer;
+}
+.card-body{
+    color: rgb(23, 21, 21);
+}

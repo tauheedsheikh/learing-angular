@@ -1,36 +1,29 @@
-<!-- 
-<div class="container">
 
-    
-    <h1>Product Works!</h1>
-    <p class="alert alert-primary">
-        {{ user | json}}
-    </p>
-
-    <p class="alert alert-primary">
-        {{ dataSarvice.user | json}}
-    </p>
-    
-    <p class="alert alert-primary">
-        Use is loggedIn - {{ isLoggedIn }}
-    </p>
-</div> -->
 
 <div class="container">
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" *ngFor="let p of products">
             <div class="card">
-                <img src="{{p.images}}" class="card-img-top" alt="p.images">
                 <div class="card-body">
-                    <h5 class="card-title">{{p.title}}</h5>
-                    <p class="card-text">{{p.description}}</p>
+                  <!-- <h5 class="card-title">{{p.name}}</h5></a>  -->
+                  <a class="card-title" (click)="getOneProuduct(p)"> <h5> {{p.name}}</h5></a>      
+                    <p class="badge rounded-pill bg-success">{{p.description}}</p>
+                    <p class="card-text">Price : {{p.productType}} </p>
+                    <p class="card-text">Seller : {{p.seller}} </p>
+                    <p class="card-text">manufacturer : {{p.manufacturer}} </p>
                     <p class="card-text">Price : {{p.price}} </p>
-                    <p class="card-text">Category : {{p.category}} </p>
-                    <!-- <p class="card-text">Category : {{p.category}} </p> -->
-                    <!-- <p class="card-text">Category : {{p.category}} </p> -->
+                    <span class="badge bg-warning text-dark btn-card" (click)="onEdit(p)">Edit</span>
+                    <span class="badge bg-danger btn-card" (click)="onDelete(p.id)">Delete</span>
                 </div>
             </div>
         </div>
     </div>
+    <br> 
+    <button type="button" class="btn btn-info position-relative mb-3 float-right" routerLink="/products/create">
+        Create Products
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+        
+        </span>
+    </button>
 </div>

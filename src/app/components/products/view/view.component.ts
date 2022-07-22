@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-view',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+  public product:any;
+
+  constructor(public productsService:ProductService) { }
 
   ngOnInit(): void {
+    // console.log(history.state.product);    
+    if(history.state.product!=null) {
+      this.product = history.state.product;
+    }
   }
 
+
 }
+

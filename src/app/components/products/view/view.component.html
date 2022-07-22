@@ -1,1 +1,19 @@
-<p>view works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">{{p.name}}</h5></a>  -->
+                    <h5> {{product.name}}</h5>
+                    <p class="badge rounded-pill bg-success">DESCRIPTION {{product.description}}</p>
+                    <p class="card-text">CATEGORY : {{product.productType}} </p>
+                    <p class="card-text">SELLER : {{product.seller}} </p>
+                    <p class="card-text">MANUFACTURER : {{product.manufacturer}} </p>
+                    <p class="card-text">PRICE : {{product.price}} </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

@@ -1,1 +1,125 @@
-<p>create works!</p>
+<div class="container form-container">
+    <h1>Create Products</h1>
+    <form class="form-validate" [formGroup]="createFroms" (ngSubmit)="onSubmit(createFroms)">
+        <!-- <div class="row"> -->
+
+
+
+              <!--PRODUCT NAME --> 
+            <div class="col-sm-7">
+                <div class="form-group">
+                    <label for="name">PRODUCT NAME</label>
+                    <input type="text" class="form-control" name="name" formControlName="name" id="name" aria-describedby="nameHelp">
+                    <div *ngIf="hasError('name')" [class]="hasError('name') ? 'error' : ''">
+                        <div *ngIf="name?.errors">
+                            <span *ngIf="name?.errors?.['required']">Product name is a required field</span>
+                            <span *ngIf="name?.errors?.['minlength']">Product name should min 6 char long</span>
+                            <span *ngIf="name?.errors?.['maxlength']">Product name should be max 20 char long</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+              <!--DESCRIPTION --> 
+            <div class="col-sm-7">
+                <div class="form-group">
+                    <label for="description">DESCRIPTION</label>
+                    <input type="text" class="form-control" name="description" formControlName="description" id="description" aria-describedby="descriptionHelp">
+                    <div *ngIf="hasError('description')" [class]="hasError('description') ? 'error' : ''">
+                        <div *ngIf="description?.errors">
+                            <span *ngIf="description?.errors?.['required']">description is a required field</span>
+                            <span *ngIf="description?.errors?.['minlength']">description should min 6 char long</span>
+                            <span *ngIf="description?.errors?.['maxlength']">description should be max 20 char long</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+               <!--DESCRIPTION --> 
+            <div class="col-sm-7">
+                <div class="form-group">
+                    <label for="manufacturer">MANUFACTURER</label>
+                    <input type="text" class="form-control" name="manufacturer" formControlName="manufacturer"   id="manufacturer" aria-describedby="manufacturerHelp">
+                    <div *ngIf="hasError('manufacturer')" [class]="hasError('manufacturer') ? 'error' : ''">
+                        <div *ngIf="manufacturer?.errors">
+                            <span *ngIf="manufacturer?.errors?.['required']">manufacturer is a required field</span>
+                            <span *ngIf="manufacturer?.errors?.['minlength']">manufacturer should min 6 char long</span>
+                            <span *ngIf="manufacturer?.errors?.['maxlength']">manufacturer should be max 20 char long</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                 <!--DESCRIPTION --> 
+                 <div class="col-sm-7">
+                    <div class="form-group">
+                        <label for="seller">SELLER</label>
+                        <input type="text" class="form-control" name="seller" formControlName="seller" id="seller" aria-describedby="sellerHelp">
+                        <div *ngIf="hasError('seller')" [class]="hasError('seller') ? 'error' : ''">
+                            <div *ngIf="seller?.errors">
+                                <span *ngIf="seller?.errors?.['required']">seller is a required field</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                 <!--DESCRIPTION --> 
+                 <div class="col-sm-7">
+                    <div class="form-group">
+                        <label for="price">PRICE</label>
+                        <input type="text" class="form-control" name="price" formControlName="price" id="price" aria-describedby="priceHelp">
+                        <div *ngIf="hasError('price')" [class]="hasError('price') ? 'error' : ''">
+                            <div *ngIf="price?.errors">
+                                <span *ngIf="price?.errors?.['required']">price is a required field</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+         <!-- CATEGORY --> 
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <label for="productTypeInpu">CATEGORY</label>
+                <select id="productTypeInpu" name="productType" class="form-control" formControlName="productType">
+                    <option value="CLOTHING" selected>CLOTHING</option>
+                    <option value="LAPTOPS">LAPTOPS</option>
+                    <option value="MOBILES">MOBILES</option>
+                    <option value="HEADPHONES">HEADPHONES</option>
+                </select>
+                <div *ngIf="hasError('productType')" [class]="hasError('productType') ? 'error' : ''">
+                    <div *ngIf="productType?.errors">
+                        <span *ngIf="productType?.errors?.['required']">productType selection is a required field</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+           
+         <!-- File Button --> 
+        <div class="form-group">
+          <label class="col-sm- control-label" for="filebutton">SELECT PRODUCTS IMAGE</label>
+          <div class="col-sm-6">
+            <input id="filebutton" name="filebutton" class="input-file" type="file">
+          </div>
+        </div>
+        
+        
+        <!-- Button -->
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-info btn-lg">Submit</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        
+        <!-- </div> -->
+        </form>
+    </div>
+

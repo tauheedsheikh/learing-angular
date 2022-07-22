@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-import { AuthModule } from './components/auth/auth.module';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
-import { DataModule } from './components/data/data.module';
 import { HomeComponent } from './components/home/home.component';
 import { HomeModule } from './components/home/home.module';
 
